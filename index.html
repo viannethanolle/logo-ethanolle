@@ -187,6 +187,11 @@
   const LOGO_MONDAY    = "https://raw.githubusercontent.com/viannethanolle/logo-ethanolle/refs/heads/main/6885f51d6fdff45c989d73ff_monday.com%20(1).svg";
   const LOGO_CLAUDE    = "https://raw.githubusercontent.com/viannethanolle/logo-ethanolle/5f820ce215c3df01a8c21258a248ba2f6434d805/Claude_Logo_2023-s1280.png";
   const BANNER_BG      = "https://raw.githubusercontent.com/viannethanolle/logo-ethanolle/refs/heads/main/ethanolle-bg.svg";
+  const BADGE_GOLD     = "https://raw.githubusercontent.com/viannethanolle/logo-ethanolle/refs/heads/main/monday-gold-partner.png";
+  // Bannière : lien cliquable + libellé du bouton (modifiables ici pour toute l'équipe)
+  // TODO Vianney : remplacer BANNER_LINK par l'URL de la page "nos apps monday" du site
+  const BANNER_LINK    = "https://ethanolle.com/";
+  const BANNER_CTA     = "Voir nos apps monday";
 
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -233,11 +238,8 @@
       <div style="height:12px;line-height:12px;font-size:0px;">&nbsp;</div>
       <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="border-collapse:collapse;border-top:1px dotted rgb(194,199,214);width:100%;">
         <tbody><tr>
-          <td style="vertical-align:top;padding:10px 15px 0 0;">
-            <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;"><tbody><tr>
-              <td style="height:17px;vertical-align:bottom;"><img src="${LOGO_MONDAY}" alt="monday.com" height="15" style="display:block;height:15px;width:auto;border:0;"></td>
-            </tr></tbody></table>
-            <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:8px;font-weight:700;color:rgb(154,161,178);text-transform:uppercase;letter-spacing:0.08em;margin-top:3px;white-space:nowrap;">Channel Partner</div>
+          <td style="vertical-align:middle;padding:11px 15px 0 0;">
+            <img src="${BADGE_GOLD}" alt="monday.com Gold Partner" height="26" style="display:block;height:26px;width:auto;border:0;">
           </td>
           <td style="vertical-align:top;border-left:1px dotted rgb(194,199,214);padding:10px 0 0 15px;">
             <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;"><tbody><tr>
@@ -250,16 +252,16 @@
     </td>
   </tr></tbody>
 </table>
-<a href="https://ethanolle.com/ateliers-ia" style="display:block;text-decoration:none;margin-top:13px;max-width:480px;background:url('${BANNER_BG}') center center / cover rgb(23,28,71);border-radius:10px;">
+<a href="${BANNER_LINK}" style="display:block;text-decoration:none;margin-top:13px;max-width:480px;background:url('${BANNER_BG}') center center / cover rgb(23,28,71);border-radius:10px;">
   <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="border-collapse:collapse;width:100%;">
     <tbody><tr>
       <td style="vertical-align:middle;padding:12px 14px;">
-        <span style="display:inline-block;background:rgba(255,255,255,0.18);color:#fff;font-family:'Helvetica Neue',Arial,sans-serif;font-size:8px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 7px;border-radius:999px;">Nouveau</span>
-        <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:800;color:#fff;margin-top:7px;line-height:1.15;letter-spacing:-0.015em;white-space:nowrap;">Ethanolle &times; Claude, c'est officiel.</span>
-        <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:600;color:rgb(214,216,255);margin-top:5px;line-height:1.35;">Lancez l'IA dans vos &eacute;quipes avec nos ateliers sur-mesure.</span>
+        <img src="${BADGE_GOLD}" alt="monday.com Gold Partner" height="24" style="display:block;height:24px;width:auto;border:0;margin-bottom:8px;">
+        <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-0.015em;white-space:nowrap;">Ethanolle franchit le palier Gold.</span>
+        <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:600;color:rgb(214,216,255);margin-top:5px;line-height:1.35;">Le palier atteint le plus rapidement au monde, gr&acirc;ce &agrave; la confiance de nos clients. Et maintenant, nos propres apps monday.com.</span>
       </td>
       <td style="vertical-align:middle;text-align:right;padding:12px 14px 12px 8px;white-space:nowrap;">
-        <span style="display:inline-block;background:#fff;color:rgb(78,84,206);font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:700;padding:8px 14px;border-radius:999px;">Je r&eacute;serve mon atelier&nbsp;&rarr;</span>
+        <span style="display:inline-block;background:#fff;color:rgb(78,84,206);font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:700;padding:8px 14px;border-radius:999px;">${BANNER_CTA}&nbsp;&rarr;</span>
       </td>
     </tr></tbody>
   </table>
