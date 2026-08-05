@@ -188,10 +188,11 @@
   const LOGO_CLAUDE    = "https://raw.githubusercontent.com/viannethanolle/logo-ethanolle/5f820ce215c3df01a8c21258a248ba2f6434d805/Claude_Logo_2023-s1280.png";
   const BANNER_BG      = "https://raw.githubusercontent.com/viannethanolle/logo-ethanolle/refs/heads/main/ethanolle-bg.svg";
   const BADGE_GOLD     = "https://raw.githubusercontent.com/viannethanolle/logo-ethanolle/refs/heads/main/monday-gold-partner-blanc.png";
-  // Bannière : lien cliquable + libellé du bouton (modifiables ici pour toute l'équipe)
-  // TODO Vianney : remplacer BANNER_LINK par l'URL de la page "nos apps monday" du site
-  const BANNER_LINK    = "https://ethanolle.com/";
-  const BANNER_CTA     = "Voir nos apps monday";
+  // Bannière : nos apps monday mises en avant (modifiables ici pour toute l'équipe)
+  const APPS = [
+    { name: "Recurring", url: "https://ethanolle.com/recurring/", desc: "Vos t&acirc;ches r&eacute;currentes se cr&eacute;ent toutes seules." },
+    { name: "Formulle",  url: "https://ethanolle.com/formulle/",  desc: "Le formulaire qui modifie vos &eacute;l&eacute;ments monday.com." }
+  ];
 
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -255,20 +256,26 @@
     </td>
   </tr></tbody>
 </table>
-<a href="${BANNER_LINK}" style="display:block;text-decoration:none;margin-top:13px;max-width:480px;background:url('${BANNER_BG}') center center / cover rgb(23,28,71);border-radius:10px;">
-  <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="border-collapse:collapse;width:100%;">
-    <tbody><tr>
-      <td style="vertical-align:middle;padding:15px 10px 16px 16px;">
-        <img src="${BADGE_GOLD}" alt="monday.com Gold Partner" height="88" style="display:block;height:88px;width:auto;border:0;margin-bottom:13px;">
-        <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-0.015em;white-space:nowrap;">Ethanolle franchit le palier Gold.</span>
-        <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:600;color:rgb(214,216,255);margin-top:6px;line-height:1.4;">Premier partenaire monday.com &agrave; l'atteindre aussi rapidement, gr&acirc;ce &agrave; nos clients.<br>Nos propres apps sont disponibles&nbsp;!</span>
-      </td>
-      <td style="vertical-align:middle;text-align:right;padding:15px 16px 16px 6px;white-space:nowrap;">
-        <span style="display:inline-block;background:#fff;color:rgb(78,84,206);font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:700;padding:8px 14px;border-radius:999px;">${BANNER_CTA}&nbsp;&rarr;</span>
-      </td>
-    </tr></tbody>
-  </table>
-</a>`;
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" width="480" style="border-collapse:collapse;width:100%;max-width:480px;margin-top:13px;background:url('${BANNER_BG}') center center / cover rgb(23,28,71);border-radius:10px;">
+  <tbody><tr>
+    <td style="padding:14px 16px 15px;">
+      <img src="${BADGE_GOLD}" alt="monday.com Gold Partner" height="80" style="display:block;height:80px;width:auto;border:0;margin-bottom:11px;">
+      <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:800;color:#fff;line-height:1.15;letter-spacing:-0.015em;">Ethanolle franchit le palier Gold.</span>
+      <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:10px;font-weight:600;color:rgb(214,216,255);margin-top:5px;line-height:1.4;">Premier partenaire monday.com &agrave; l'atteindre aussi rapidement, gr&acirc;ce &agrave; nos clients.</span>
+      <div style="border-top:1px solid rgba(255,255,255,0.16);margin-top:12px;padding-top:10px;font-family:'Helvetica Neue',Arial,sans-serif;font-size:8px;font-weight:700;color:rgb(255,203,0);text-transform:uppercase;letter-spacing:0.09em;">Et nous d&eacute;veloppons nos apps pour vous</div>
+      <table cellpadding="0" cellspacing="0" border="0" role="presentation" width="100%" style="border-collapse:separate;border-spacing:8px 0;width:100%;margin-top:8px;margin-left:-8px;">
+        <tbody><tr>
+${APPS.map(a => `          <td width="50%" style="width:50%;vertical-align:top;background:rgba(255,255,255,0.09);border-radius:8px;padding:9px 11px;">
+            <a href="${a.url}" style="text-decoration:none;display:block;">
+              <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:800;color:#fff;line-height:1.2;">${a.name}&nbsp;&rarr;</span>
+              <span style="display:block;font-family:'Helvetica Neue',Arial,sans-serif;font-size:9px;font-weight:600;color:rgb(198,201,247);margin-top:3px;line-height:1.35;">${a.desc}</span>
+            </a>
+          </td>`).join("\n")}
+        </tr></tbody>
+      </table>
+    </td>
+  </tr></tbody>
+</table>`;
   }
 
   function render(){ $("sigPreview").innerHTML = buildSignature(); }
